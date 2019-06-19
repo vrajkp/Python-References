@@ -6,3 +6,4 @@
 	
 => library.classname() to access class of a library
 
+=> library.classname().mehod() to access method of that class
