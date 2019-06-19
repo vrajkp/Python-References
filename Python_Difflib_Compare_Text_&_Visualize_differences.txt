@@ -1,0 +1,67 @@
+=> library used: Difflib
+
+=> """ """ is used to write multiple line in string
+
+=> Differ is a class of a difflib 
+
+=> Compare is a method of a Differ class
+	- This is used to compare text line by line
+-------------------------------------------------------------------------------------------------------------------------------------------------
+																		Example
+-------------------------------------------------------------------------------------------------------------------------------------------------
+CODE:		import difflib
+
+			text_A = """
+			1) Only [Text_A] has this line
+			2) Both have this line
+			3) Similar version ! :D works in the middle or in the end. :D
+			"""
+
+			text_B = """
+			1) Can be found in just [text_B]
+			2) Both have this line
+			3) Similar ! :P works in the middle or in the end as well. :P
+			"""
+
+			delta = difflib.Differ().compare(text_A.splitlines(),text_B.splitlines())
+			print('\n'.join(delta))
+			
+			
+			
+			delta_html = difflib.HtmlDiff().make_file(text_A.splitlines(),text_B.splitlines())
+
+			with open('diff.html','w') as f:
+				f.write(delta_html)
+
+			
+OUTPUT: 	- 1) Only [Text_A] has this line
+			+ 1) Can be found in just [text_B]
+			  2) Both have this line
+			- 3) Similar version ! :D works in the middle or in the end. :D
+			?            --------   ^                                     ^
+
+			+ 3) Similar ! :P works in the middle or in the end as well. :P
+			?               ^                                  ++++++++   ^
+-------------------------------------------------------------------------------------------------------------------------------------------------
+																	  EXPLANATION
+-------------------------------------------------------------------------------------------------------------------------------------------------
+
+=> 4 different signs in the output
+	1) '+': opposite! text exist in second but not in the first
+	2) '-': text exist in first but not in the second
+	3) ' '(White Space): exist in both text
+	4) '?': Exact difference of char in two lines
+	
+=> Compare() can not take 3 arguments
+
+=> Only 2 text will be compared at the same time
+
+=> To show the difference more accurately use HTMLDiff() class 
+	It will store difference in HTML format
+	open a new html file
+	write into it
+	and you are done
+	
+-------------------------------------------------------------------------------------------------------------------------------------------------
+
+
