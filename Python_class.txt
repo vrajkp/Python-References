@@ -4,4 +4,5 @@
 => Object:
 	- object is one of the instances of then class which is used to perform functionalities defined in the class
 	
-=>
+=> library.classname() to access class of a library
+
