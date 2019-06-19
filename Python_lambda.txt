@@ -1,0 +1,40 @@
+=> What is key=lambda variable: parameter?
+
+	-sorted() returns a list of sorted elements and if we want to sort in a particular way or if we want to sort a complex list of elements 
+	-(e.g. nested lists or a list of tuples) we can invoke the key argument.
+	
+	-the intuitive understanding of the key argument, why it has to be callable,
+	 and the use of lambda as the (anonymous) callable function to accomplish this comes in two parts.
+		
+		1)Using lamba ultimately means you don't have to write (define) an entire function, like the one sblom provided an example of. 
+			-Lambda functions are created, used, and immediately destroyed - so they don't funk up your code with more code that will only ever be used once. 
+			-This, as I understand it, is the core utility of the lambda function and its applications for such roles are broad. 
+			-Its syntax is purely by convention, which is in essence the nature of programmatic syntax in general. 
+			-Learn the syntax and be done with it.
+			
+			-Lambda syntax is as follows:
+			
+				lambda input_variable(s): tasty one liner
+				
+			-e.g.
+						In [1]: f00 = lambda x: x/2
+
+						In [2]: f00(10)
+						Out[2]: 5.0
+
+						In [3]: (lambda x: x/2)(10)
+						Out[3]: 5.0
+
+						In [4]: (lambda x, y: x / y)(10, 2)
+						Out[4]: 5.0
+
+						In [5]: (lambda: 'amazing lambda')() # func with no args!
+						Out[5]: 'amazing lambda'
+			
+		2)The idea behind the key argument is that it should take in a set of instructions that will essentially point the 'sorted()' function at those list elements which should used to sort by. 
+			-When it says key=, what it really means is: As I iterate through the list one element at a time (i.e. for e in list)
+			-I'm going to pass the current element to the function I provide in the key argument and use that to create a transformed list which will inform me on the order of final sorted list.
+
+				-mylist = [3,6,3,2,4,8,23]
+				-sorted(mylist, key=WhatToSortBy)
+
