@@ -1,0 +1,7 @@
+=> What is class?
+	- class is a bunch of code written to execute some particular task.
+		like additin, deletion 
+=> Object:
+	- object is one of the instances of then class which is used to perform functionalities defined in the class
+	
+=>

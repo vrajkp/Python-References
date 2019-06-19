@@ -1,0 +1,39 @@
+=> Difference between tuple and list in python
+- List can be modified(mutable) and tuple can not(Immutable) and both are sequential data types
+
+=> Sequential data types:
+
+	- There are total 7 sequential data types in python
+		-string
+		-Unicode string
+		-list
+		-tuple
+		-bytearrays
+		-buffer
+		-xrange
+	-Dictionary and sets are containers for sequential data
+	
+=>The Difference Between a Variable and an Object
+	- Variable is a reference to the python object in thr memory
+	- For, Example
+		a=["apple","banana"]
+		- When you do this, a python object of type list is created in the memory and the variable 
+		  'a' refers to this object by holding its location in memory.
+		-In fact, you can actually retrieve the location of the list object in memory by inspecting a using the id() function.
+		
+=> Multiple appending to a string object is inefficient because string object is Immutable. 
+	- Immutable objects take more time for appending than the mutable
+
+=> When you type b=a you are just copying address of the object refered by a.
+
+=> Immutable objects are easy for the debugging as they are not modified.
+
+=> Immutable object are memory efficient as python compiler will bundle the different objects into one with the same value.
+	- For Example,
+		a = "Vraj"
+		b = "Vraj"
+		
+		- Python compilerwill bundle these 2 different variable into same object
+		- This thing is possible and safe because string are immutable and same with int, float, boolean
+		
+=>		
